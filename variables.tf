@@ -1,5 +1,5 @@
 variable "ami"{
-    default = "ami-09c813fb71547fc4f"
+    default = "ami-0220d79f3f480ecf5"
 }
 
 variable "instance_type"{
@@ -7,12 +7,12 @@ variable "instance_type"{
 }
 
 variable "vpc_security_group_ids" {
-    default = [ "sg-039df2e97e51ebc17" ]
+    default = [ "sg-03dfc56f63b6d06c5" ]
 }
 
 
 variable "zone_id" {
-    default = "Z09354891N46GVLJSDZH0"
+    default = "Z03369982K8R0OHQ4XJJV"
 }
 
 variable "components" {
