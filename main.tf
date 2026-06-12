@@ -9,14 +9,14 @@ resource "aws_instance" "instance" {
     }
 }
 
-# resource "aws_route53_record" "dns_records" {
-#     for_each = var.components
-#     zone_id  = var.zone_id
-#     name     = "${each.key}-dev"
-#     type     = "A"
-#     ttl      = 30
-#     records  = [aws_instance.instance[each.key].private_ip]
-# }
+resource "aws_route53_record" "dns_records" {
+    for_each = var.components
+    zone_id  = var.zone_id
+    name     = "${each.key}-dev"
+    type     = "A"
+    ttl      = 30
+    records  = [aws_instance.instance[each.key].private_ip]
+}
 
 
 resource "null_resource" "ansible" {
