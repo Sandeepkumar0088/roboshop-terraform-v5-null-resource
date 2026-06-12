@@ -19,26 +19,26 @@ resource "aws_route53_record" "dns_records" {
 }
 
 
-resource "null_resource" "ansible" {
-    depends_on = [
-        aws_instance.instance,
-        aws_route53_record.dns_records
-    ]
-
-    for_each   = var.components
-
-    provisioner "remote-exec" {
-        connection {
-            type      = "ssh"
-            user      = "ec2-user"
-            password  = "DevOps321"
-            host      = aws_instance.instance[each.key].private_ip
-        }
-
-        inline = [
-          "sudo dnf install ansible -y",
-          "ansible-pull -i localhost, -U https://github.com/Sandeepkumar0088/roboshop-ansible-templates.git main.yml -e component=${each.key} -e env=dev"
-        ]
-
-    }
-}
+# resource "null_resource" "ansible" {
+#     depends_on = [
+#         aws_instance.instance,
+#         aws_route53_record.dns_records
+#     ]
+#
+#     for_each   = var.components
+#
+#     provisioner "remote-exec" {
+#         connection {
+#             type      = "ssh"
+#             user      = "ec2-user"
+#             password  = "DevOps321"
+#             host      = aws_instance.instance[each.key].private_ip
+#         }
+#
+#         inline = [
+#           "sudo dnf install ansible -y",
+#           "ansible-pull -i localhost, -U https://github.com/Sandeepkumar0088/roboshop-ansible-templates.git main.yml -e component=${each.key} -e env=dev"
+#         ]
+#
+#     }
+# }
