@@ -27,6 +27,5 @@ variable "components" {
         shipping  = ""
         rabbitmq  = ""
         payment   = ""
-        dispatch  = ""
     }
 }
