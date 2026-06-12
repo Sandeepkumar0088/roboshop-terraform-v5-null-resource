@@ -22,7 +22,7 @@ resource "aws_route53_record" "dns_records" {
 resource "null_resource" "ansible" {
     depends_on = [
         aws_instance.instance,
-        # aws_route53_record.dns_records
+        aws_route53_record.dns_records
     ]
 
     for_each   = var.components
