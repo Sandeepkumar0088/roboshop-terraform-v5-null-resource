@@ -21,7 +21,7 @@ variable "components" {
     frontend    = "10.0.1.8"
     mongodb     = "10.0.1.4"
     catalogue   = "10.0.1.6"
-    user        = "10.0.1.13"
+    user        = "10.0.1.9"
     redis       = "10.0.1.12"
     cart        = "10.0.1.13"
     mysql       = "10.0.1.11"
