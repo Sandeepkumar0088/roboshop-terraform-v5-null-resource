@@ -18,15 +18,15 @@ variable "zone_id" {
 
 variable "components" {
   default = {
-    frontend    = "10.0.1.7"
-    mongodb     = "10.0.1.12"
+    frontend    = "10.0.1.8"
+    mongodb     = "10.0.1.10"
     catalogue   = "10.0.1.6"
     user        = "10.0.1.9"
-    redis       = "10.0.1.8"
-    cart        = "10.0.1.4"
-    mysql       = "10.0.1.13"
+    redis       = "10.0.1.7"
+    cart        = "10.0.1.12"
+    mysql       = "10.0.1.4"
     shipping    = "10.0.1.11"
     rabbitmq    = "10.0.1.5"
-    payment     = "10.0.1.10"
+    payment     = "10.0.1.13"
   }
 }
